@@ -1,0 +1,301 @@
+html {
+  height: 100%;
+   
+  }
+  body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background-color: #cccc;
+    font-family: 'REFORMA 2018', sans-serif;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(¿Cómo-abrir-una-vinoteca-Todo-lo-que-debes-saber0.jpg);
+  
+  }
+  
+  header {
+    background-color: #00000000;
+  }
+  
+  
+  .navbar {
+    height: 45px;
+    background-color: hsl(0, 0%, 10%);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navbar .logo a {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    margin-left: 12px;
+  }
+  
+  .menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+
+  .menu-links {
+    display: flex;
+    gap: 24px;
+    border-right: 1px solid #999999;
+    padding-inline: 24px;
+  }
+  
+  .menu-links a {
+    font-weight: 500;
+    color: #999999;
+    padding: 8px 16px;
+  }
+  .menu-links a:hover {
+    color: white;
+  }  
+
+  .log-in {
+    font-weight: 500;
+    padding: 12px 22px;
+    background-color: transparent;
+    color: #999999;
+    border-radius: 10px;
+    border: 2px solid #cccc;
+    transition: 0.2s;
+  }
+  .log-in:hover {
+    background-color: #cccc;
+    color: white;
+  }
+  
+  .menu-btn {
+    font-size: 32px;
+    color: white;
+    display: none;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 53rem) {
+    .menu {
+      display: none;
+    }
+  
+    .menu-btn {
+      display: block;
+    }
+  }
+  #logo {
+    height: auto;
+    width: 50%;
+    margin-left: 125%;
+    
+  }
+  
+  .texto {
+    color: #ccc;
+    font-family: 'REFORMA 2018', sans-serif;
+    font-size: 30px;
+  }
+  .texto2 {
+      color: #ccc;
+    font-family: 'REFORMA 2018', sans-serif;
+    font-size: 18px;
+  }
+  
+  #logoig {
+    height: 100px;
+    width: 100px;
+  }
+  
+  #logo2 {
+    height: 110px;
+  }
+  footer {
+    margin-top: auto;
+    background-color: #5a5959;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1fr;
+    justify-content: start; 
+    align-items: center;
+  }
+  
+  footer p {
+    margin: 0;
+    text-align: left; 
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .antoniavinos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    text-align: center;
+  }
+  .carousel {
+    position: relative;
+    width: 80%;
+    max-width: 1200px;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel-item img {
+    max-width: 250px;
+    border-radius: 10px;
+}
+
+
+.info h3 {
+    margin: 10px 0;
+}
+
+.info p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #bbb;
+    margin: 10px 0;
+}
+
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+nav.primary-navigation ul {
+  list-style: none;
+  margin: 0 auto;
+  border-left: 2px solid #292929;
+  display: inline-block;
+  padding: 0 30px;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  font-family: 'REFORMA 2018', sans-serif; 
+}
+
+nav.primary-navigation ul li a {
+  color: black;
+  font-family: 'REFORMA 2018', sans-serif;
+}
+
+nav.primary-navigation ul li a:hover {
+  color: #666;
+}
+
+nav.primary-navigation ul li:hover {
+  cursor: pointer;
+}
+
+nav.primary-navigation ul li ul {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  padding-left: 0;
+  left: 0;
+  display: none;
+  background: white;
+}
+
+nav.primary-navigation ul li:hover > ul,
+nav.primary-navigation ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+  min-width: 250px;
+  text-align: left;
+  padding-top: 20px;
+  box-shadow: 0px 3px 5px -1px #000;
+}
+
+nav.primary-navigation ul li ul li {
+  clear: both;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 20px;
+  border-style: none;
+  font-family: 'REFORMA 2018', sans-serif; 
+}
+
+nav.primary-navigation ul li ul li a:hover {
+  padding-left: 10px;
+  border-left: 2px solid #252525;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #ccc;
+}
+
+ul li ul li a {
+  transition: all 0.5s ease;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #000000;
+  background-color: #cccc;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  margin-top: 20px;
+  margin-bottom: 20px; /* Añadir margen inferior al botón */
+}
+
+.button:hover {
+  background-color: #222;
+}
+
+.button:active {
+  background-color: #cccc;
+  box-shadow: 0 5px #444;
+  transform: translateY(4px);
+}

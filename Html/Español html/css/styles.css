@@ -1,0 +1,192 @@
+html {
+    height: 100%;
+     
+    }
+    body{
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      background-color: #cccc;
+      font-family: 'REFORMA 2018', sans-serif;
+    
+    }
+    
+
+.logo{
+    height: auto;
+    width: auto;
+}
+.tour-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.tour-card {
+    background: #cccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 500px;
+    margin: 10px;
+}
+
+.wine-image {
+    width: 100%;
+    height: auto;
+}
+
+.tour-info {
+    padding: 20px;
+}
+
+.tour-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.tour-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.tour-details-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tour-details p {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.tour-details p i {
+    margin-right: 5px;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.description {
+    margin: 15px 0;
+}
+
+
+
+button {
+    background-color: #68656599;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #83828299
+}
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+  }
+  
+  .whatsapp-float a {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+  }
+  
+  .whatsapp-float i {
+    font-size: 24px;
+  }
+  
+  .whatsapp-float:hover {
+    background-color: #1ebe5b;
+  }
+  
+  .log-in {
+    font-weight: 500;
+    padding: 12px 22px;
+    background-color: transparent;
+    color: #999999;
+    border-radius: 10px;
+    border: 2px solid #cccc;
+    transition: 0.2s;
+  }
+  
+  .log-in:hover {
+    background-color: #cccc;
+    color: white;
+  }
+
+  footer {
+    margin-top: auto;
+    background-color: #252525;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1fr;
+    justify-content: start; 
+    align-items: center;
+  }
+  
+  footer p {
+    margin: 0;
+    text-align: left; 
+  }
+  .whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+  }
+  
+  .whatsapp-float a {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+  }
+  
+  .whatsapp-float i {
+    font-size: 24px;
+  }
+  
+  .whatsapp-float:hover {
+    background-color: #1ebe5b;
+  }
+
+  

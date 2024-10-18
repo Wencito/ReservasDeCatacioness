@@ -1,0 +1,95 @@
+html {
+    height: 100%;
+     
+    }
+    body{
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      background-color: #cccc;
+      font-family: 'REFORMA 2018', sans-serif;
+    
+    }
+    
+
+.logo{
+    height: auto;
+    width: auto;
+}
+.tour-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.tour-card {
+    background: #cccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 500px;
+    margin: 10px;
+}
+
+.wine-image {
+    width: 100%;
+    height: auto;
+}
+
+.tour-info {
+    padding: 20px;
+}
+
+.tour-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.tour-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.tour-details-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tour-details p {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.tour-details p i {
+    margin-right: 5px;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.description {
+    margin: 15px 0;
+}
+
+
+
+button {
+    background-color: #68656599;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #83828299
+}

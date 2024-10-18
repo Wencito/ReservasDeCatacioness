@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Cuenta</title>
+    <link rel="stylesheet" href="recover-account.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="jpg/Logotipo Antonia - Negativo blanco png.png" alt="Logo">
+        </div>
+    </header>
+    <div class="main-content">
+        <div class="recover-account">
+            <h2>Recupera tu cuenta</h2>
+            <p>Ingresa tu correo electrónico o número de celular para buscar tu cuenta.</p>
+            <input type="text" id="userInput" placeholder="Correo electrónico o número de celular">
+            <div class="buttons">
+                <button class="back" onclick="goBack()">Volver</button>
+                <button class="search" onclick="sendMessage()">Buscar</button>
+            </div>
+            <p id="successMessage" class="success-message" style="display: none;">Mensaje para recuperar contraseña se mandó con éxito</p>
+        </div>
+    </div>
+    <footer>
+        <p></p>Copyright © 2024 Antonia Vinos.</p>
+        <div class="links">
+            <a href="#">Condiciones</a>
+            <a href="#">Política de privacidad</a>
+            <a href="#">Opciones de anuncios</a>
+        </div>
+    </footer>
+    <script src="recover-account.js"></script>
+</body>
+</html>
+

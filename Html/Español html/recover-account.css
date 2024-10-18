@@ -1,0 +1,121 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  header {
+    background-color: #222;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  .logo img {
+    height: 150px;
+  }
+  
+  /* Contenido principal centrado */
+  .main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .recover-account {
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+  }
+  
+  .recover-account h2 {
+    margin-bottom: 15px;
+  }
+  
+  .recover-account p {
+    margin-bottom: 20px;
+    color: #606770;
+  }
+  
+  .recover-account input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #dddfe2;
+    border-radius: 5px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .cancel, .search {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cancel {
+    background-color: #e9ebee;
+    color: #4b4f56;
+  }
+  
+  .search {
+    background-color: #111;
+    color: white;
+  }
+  
+  /* Footer pegajoso */
+  footer {
+    background-color: #f5f6f7;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  footer p {
+    margin-bottom: 10px;
+    color: #4b4f56;
+  }
+  
+  footer .links a {
+    color: #444;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  footer .links a:hover {
+    text-decoration: underline;
+  }
+
+  
+.back {
+    background-color: #e9ebee;
+    color: #4b4f56;
+  }
+  
+  /* Estilo para el mensaje de éxito */
+  .success-message {
+    color: #28a745;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  
+  

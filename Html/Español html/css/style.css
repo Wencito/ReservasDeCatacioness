@@ -1,0 +1,128 @@
+html {
+  height: 100%;
+   
+  }
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background-color: #cccc;
+  font-family: 'REFORMA 2018', sans-serif;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(352176194_238676802237544_5232984782484861390_n.jpg);
+
+}
+header {
+  background-color: #000000;
+}
+
+.navbar {
+  list-style: none;
+  background-color: #333333;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar li {
+  margin: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  padding: 15px 20px;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #555;
+}
+
+#logo {
+  height: auto;
+  width: 100%;
+  margin-left: 97%;
+}
+
+.texto2 {
+  color: white;
+}
+
+.Atamisque,
+.BaronB,
+.Chandon,
+.LaCaroyense,
+.LaRural,
+.Lopez,
+.SantaJulia {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: fff;
+  padding: 35px;
+  height: 100px;
+  text-decoration: none;
+}
+
+.Atamisque {
+  background-image: url("Atamsiqe.jpeg");
+}
+
+.BaronB {
+  background-image: url("Bodega-Chandon.jpg");
+}
+
+.Chandon {
+  background-image: url("Bodega-Chandon.jpg");
+}
+
+.LaCaroyense {
+  background-image: url("https://i.ibb.co/8Nby02V/Whats-App-Image-2023-08-18-at-23-24-51.jpg");
+}
+
+.LaRural {
+  background-image: url("https://i.ibb.co/vdgZ8Hn/Whats-App-Image-2023-08-18-at-23-24-50.jpg");
+}
+
+.Lopez {
+  background-image: url("https://i.ibb.co/LQNTk2p/Whats-App-Image-2023-09-15-at-11-06-03.jpg");
+}
+
+.SantaJulia {
+  background-image: url("https://i.ibb.co/LQNTk2p/Whats-App-Image-2023-09-15-at-11-06-03.jpg");
+}
+
+.texto {
+  color: #282424;
+  font-family: 'REFORMA 2018', sans-serif;
+}
+
+#logoig {
+  height: 100px;
+  width: 100px;
+}
+
+#logo2 {
+  height: 110px;
+}
+
+footer {
+  background-color: #cccccc;
+  height: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+a {
+  text-decoration: none;
+}
+
+.antoniavinos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  text-align: center;
+}
