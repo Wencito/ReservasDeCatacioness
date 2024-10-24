@@ -18,12 +18,22 @@ header {
 .navbar {
   height: 45px;
   background-color: hsl(0, 0%, 10%);
-  padding: 20px 40px;
+  padding: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Centramos el contenido del navbar */
   align-items: center;
 }
 
+.navbar {
+  height: 85px;
+  background-color: hsl(0, 0%, 10%);
+  display: flex;
+  justify-content: center; /* Centra el contenido del navbar */
+  align-items: center;
+  padding: 0; /* Elimina el padding que podría estar causando el desbordamiento */
+  width: 100%;
+  box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
+}
 .navbar .logo a {
   font-size: 24px;
   font-weight: 700;
@@ -33,58 +43,41 @@ header {
 
 .menu {
   display: flex;
+  justify-content: center; /* Centramos el contenido dentro del contenedor menu */
   align-items: center;
-  gap: 32px;
 }
 
 .menu-links {
   display: flex;
   gap: 24px;
-  border-right: 1px solid #999999;
   padding-inline: 24px;
+  margin: 0; /* Elimina el margen predeterminado de los elementos de lista */
 }
 
 .menu-links a {
   font-weight: 500;
+  font-family: 'REFORMA 2018', sans-serif;
   color: #999999;
   padding: 8px 16px;
+  text-decoration: none;
+  font-size: 16px; /* Asegura que el tamaño de fuente no cambie inesperadamente */
 }
 
 .menu-links a:hover {
   color: white;
 }  
 
-.log-in {
-  font-weight: 500;
-  padding: 12px 22px;
-  background-color: transparent;
-  color: #999999;
-  border-radius: 10px;
-  border: 2px solid #cccc;
-  transition: 0.2s;
-}
 
-.log-in:hover {
-  background-color: #cccc;
-  color: white;
-}
-
-.menu-btn {
-  font-size: 32px;
-  color: white;
-  display: none;
-  cursor: pointer;
-}
-
-@media (max-width: 53rem) {
-  .menu {
-    display: none;
+/* Ajustes específicos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
   }
-
-  .menu-btn {
-    display: block;
-  }
+  
 }
+  
+
 
 #logo {
   height: auto;
@@ -112,12 +105,12 @@ header {
 
 footer {
   margin-top: auto;
-  background-color: #5a5959;
+  background-color: #252525;
   height: 50px;
   display: grid;
-  grid-template-columns: 1fr; /* Define una sola columna */
+  grid-template-columns: 1fr; 
   grid-template-rows: 1fr;
-  justify-content: start; /* Alinea el contenido a la izquierda */
+  justify-content: start; 
   align-items: center;
 }
 
@@ -219,3 +212,36 @@ a:hover {
 ul li ul li a {
   transition: all 0.5s ease;
 }
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 1000;
+}
+
+.whatsapp-float a {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+}
+
+.whatsapp-float i {
+  font-size: 24px;
+}
+
+.whatsapp-float:hover {
+  background-color: #1ebe5b;
+}
+
