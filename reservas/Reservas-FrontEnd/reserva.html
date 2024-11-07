@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Antonia Vinos | Reservas</title>
-  <link href="https://fonts.cdnfonts.com/css/reforma-1918" rel="stylesheet">           
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/png" sizes="16x16" href="/Html/Español html/jpg/favicon-16x16.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Antonia Vinos | Reservas</title>
+    <link href="https://fonts.cdnfonts.com/css/reforma-1918" rel="stylesheet">           
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
@@ -102,7 +100,29 @@
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
-  <script src="/reservas/Reservas-Backend/scripts.js"></script>
+  <script>
+    document.getElementById('reserva-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Crear objeto FormData con los datos del formulario
+        const formData = new FormData(this);
+
+        // Hacer la petición al archivo PHP
+        fetch('http://localhost/ejemplo/guardar_reserva.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            // Mostrar el mensaje de éxito o error en un elemento debajo del formulario
+            document.getElementById("resultMessage").innerText = data;
+
+            // Limpiar los campos del formulario
+            document.getElementById("reserva-form").reset();
+        })
+        .catch(error => console.error('Error:', error));
+    });
+</script>
+
 </body>
 </html>

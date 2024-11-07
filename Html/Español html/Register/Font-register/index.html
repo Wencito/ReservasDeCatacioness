@@ -62,39 +62,7 @@
         </form>
     </div>
     
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#registerButton').click(function() {
-                // Obtener los valores del formulario
-                const username = $('#username').val();
-                const password = $('#password').val();
-                const confirmPassword = $('#confirmPassword').val();
-
-                // Validar que las contraseñas coincidan
-                if (password !== confirmPassword) {
-                    alert("Las contraseñas no coinciden.");
-                    return;
-                }
-
-                // Enviar los datos al backend
-                $.ajax({
-                    url: 'http://localhost:3000/api/register', // Cambia esto si es necesario
-                    type: 'POST',
-                    contentType: 'application/json',
-                    data: JSON.stringify({
-                        username: username,
-                        password: password
-                    }),
-                    success: function(response) {
-                        alert("Registro completado: " + response.message);
-                    },
-                    error: function(xhr) {
-                        alert("Error en el registro: " + xhr.responseJSON.error);
-                    }
-                });
-            });
-        });
     </script>
 </body>
 </html>

@@ -1,17 +1,27 @@
-// knexfile.js
-import knex from 'knex';
+const knex = require('knex');
 
-export const development = {
-  client: 'mysql',
-  connection: {
-    host: '127.0.0.1',
-    port: 3307,
-    user: 'root',
-    password: '',
-    database: 'fichador'
-  },
+const development = {
+    client: 'mssql',
+    connection: {
+        host: 'ALEJANDROLEAL\\SQLEXPRESS',
+        port: 1433,
+        user: 'sa',
+        password: 'Itapu6Ctp',
+        database: 'CatacionesDeVinos',
+        options: {
+            enableArithAbort: true,
+            encrypt: false
+        }
+    },
+    pool: {
+        min: 2,
+        max: 10
+    },
+    migrations: {
+        tableName: 'knex_migrations'
+    }
 };
-  
+
 const dbConnection = knex(development);
 
-export default dbConnection;
+module.exports = dbConnection;
