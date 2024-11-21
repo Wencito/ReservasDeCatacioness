@@ -273,3 +273,16 @@ html {
     box-shadow: 0 5px #444;
     transform: translateY(4px);
   }
+
+  .spotify__links {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    gap: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 5%;
+}

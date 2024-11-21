@@ -7,6 +7,25 @@
     <title>Antonia Vinos | Reservas</title>
     <link href="https://fonts.cdnfonts.com/css/reforma-1918" rel="stylesheet">           
     <link rel="stylesheet" href="styles.css">
+    <style>
+        #resultMessage {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1rem;
+            display: none; /* Oculto por defecto */
+        }
+        #resultMessage.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        #resultMessage.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
 </head>
 <body>
   <header>
@@ -49,7 +68,17 @@
 
         <label for="telefono">Teléfono:</label>
         <input type="text" id="telefono" name="telefono" required>
-
+        
+        <label for="bodegas">Bodegas:</label>
+        <select id="bodegas" name="bodegas" required>
+            <option value="Atamisque">Atamisque</option>
+            <option value="Baron B">Baron B</option>
+            <option value="Chandon">Chandon</option>
+            <option value="La Caroyense">La Caroyense</option>
+            <option value="La Caroyense">La Rural</option>
+            <option value="Lopez">Lopez</option>
+            <option value="Santa Julia">Santa Julia</option>
+        </select>
         <label for="visitantes">Visitantes:</label>
         <select id="visitantes" name="visitantes" required>
           <option value="1">1</option>
@@ -61,27 +90,23 @@
         <label for="idioma">Idioma:</label>
         <select id="idioma" name="idioma" required>
           <option value="Español">Español</option>
-          <option value="Inglés">Inglés</option>
-          <option value="Portugués">Portugués</option>
         </select>
 
         <label for="fecha">Fecha:</label>
         <input type="date" id="fecha" name="fecha" required>
 
-        <label for="bodegas">Bodegas:</label>
-        <select id="bodegas" name="bodegas" required>
-          <option value="Atamisque">Atamisque</option>
-          <option value="Baron B">Baron B</option>
-          <option value="Chandon">Chandon</option>
-          <option value="La Caroyense">La Caroyense</option>
-          <option value="Lopez">Lopez</option>
-          <option value="Santa Julia">Santa Julia</option>
+     
+        
+        
+        
+        <label for="hora">Hora:</label>
+        <select id="hora" name="hora" required>
         </select>
 
         <button type="submit">Reservar</button>
       </form>
+      <div id="resultMessage"></div> <!-- Contenedor para el mensaje -->
     </div>
-    
     
     <div class="tour-info">
       <h2>Detalles del Tour</h2>
@@ -94,35 +119,113 @@
         <li>Se solicita una tarjeta solo para asegurar la reserva.</li>
         <li>Pagará el monto total el día de la reserva.</li>
         <li>Menores de 18 años no tienen permitida la actividad.</li>
-        <li>Cancelación o modificación hasta 24hs antes.</li>
       </ul>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2406.474972287446!2d-64.18898269730093!3d-31.46177067431257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a351f8ac05c7%3A0xccbd44eb6969c8da!2sAntonia%20Vinos%20con%20Historia!5e0!3m2!1ses-419!2sar!4v1724362947764!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
-
+  </div>
   <script>
-    document.getElementById('reserva-form').addEventListener('submit', function(event) {
+    document.addEventListener('DOMContentLoaded', function () {
+        const bodegaSelect = document.getElementById('bodegas');
+        const fechaInput = document.getElementById('fecha');
+        const horaSelect = document.getElementById('hora');
+
+        // Fechas permitidas por bodega (ejemplo)
+        const fechasPorBodega = {
+            "Atamisque": ["2024-11-21", "2024-11-24"],
+            "Baron B": ["2024-11-28", "2024-12-01"],
+            "Chandon": ["2024-12-05", "2024-12-08"],
+            "La Caroyense": ["2024-12-12", "2024-12-15"],
+            "La Rural": ["2024-12-19", "2024-12-22"],
+            "Lopez": ["2024-12-26", "2024-12-29"],
+            "Santa Julia": ["2025-01-02", "2025-01-05"]
+        };
+
+        // Horarios permitidos por bodega
+        const horariosPorBodega = {
+            "Atamisque": ["19:00","21:00", "23:00"],
+            "Baron B": ["19:00","21:00", "23:00"],
+            "Chandon": ["19:00","21:00", "23:00"],
+            "La Caroyense":["19:00","21:00", "23:00"],
+            "La Rural":["19:00","21:00", "23:00"],
+            "Lopez": ["19:00","21:00", "23:00"],
+            "Santa Julia": ["19:00","21:00", "23:00"]
+        };
+
+        // Cambiar fechas y horarios según la bodega seleccionada
+        bodegaSelect.addEventListener('change', function () {
+            const bodegaSeleccionada = bodegaSelect.value;
+
+            // Actualizar las fechas permitidas
+            const fechasDisponibles = fechasPorBodega[bodegaSeleccionada] || [];
+            fechaInput.min = fechasDisponibles[0] || "";
+            fechaInput.max = fechasDisponibles[fechasDisponibles.length - 1] || "";
+
+            // Actualizar los horarios permitidos
+            const horariosDisponibles = horariosPorBodega[bodegaSeleccionada] || [];
+            horaSelect.innerHTML = ""; // Limpiar opciones
+            horariosDisponibles.forEach(hora => {
+                const option = document.createElement("option");
+                option.value = hora;
+                option.textContent = hora;
+                horaSelect.appendChild(option);
+            });
+        });
+
+        // Disparar cambio inicial para establecer restricciones por defecto
+        bodegaSelect.dispatchEvent(new Event('change'));
+    });
+</script>
+  <script>
+   document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('reserva-form');
+    const resultMessage = document.getElementById('resultMessage');
+
+    form.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        // Crear objeto FormData con los datos del formulario
-        const formData = new FormData(this);
+        const formData = new FormData(form);
 
-        // Hacer la petición al archivo PHP
-        fetch('http://localhost/ejemplo/guardar_reserva.php', {
+        fetch('http://localhost/proyectofinal/verificar_disponibilidad.php', {
             method: 'POST',
             body: formData
         })
         .then(response => response.text())
         .then(data => {
-            // Mostrar el mensaje de éxito o error en un elemento debajo del formulario
-            document.getElementById("resultMessage").innerText = data;
-
-            // Limpiar los campos del formulario
-            document.getElementById("reserva-form").reset();
+            if (data.includes('No hay disponibilidad')) {
+                alert(data); // Mostrar mensaje si no hay espacio
+            } else {
+                // Si hay disponibilidad, enviar la reserva
+                return fetch('http://localhost/proyectofinal/reserva.php', {
+                    method: 'POST',
+                    body: formData
+                });
+            }
         })
-        .catch(error => console.error('Error:', error));
+        .then(response => response.text())
+        .then(data => {
+            // Asegúrate de que el servidor solo devuelve mensajes simples.
+            if (data.includes('<html')) {
+                console.error('El servidor devolvió HTML inesperado.');
+                resultMessage.innerText = 'Error inesperado. Por favor, intente más tarde.';
+                resultMessage.className = 'error';
+            } else {
+                resultMessage.innerText = data;
+                resultMessage.className = 'success';
+            }
+            resultMessage.style.display = 'block';
+            form.reset();
+        })
+        .catch(error => {
+            resultMessage.innerText = 'Hubo un error. Intente nuevamente.';
+            resultMessage.className = 'error';
+            resultMessage.style.display = 'block';
+            console.error('Error:', error);
+        });
     });
-</script>
+});
+
+  </script>
 
 </body>
 </html>
